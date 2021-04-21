@@ -1,13 +1,11 @@
 import React from "react";
+import "../styles/jumbo.css"
 
 function Jumbotron() {
   return (
     <div className="jumbotron">
-      <h1>Hello, world!</h1>
-      <p>I'm a jumbotron!</p>
-      <p>
-        <button className="btn btn-primary btn-lg">Learn more</button>
-      </p>
+      <h1>The companys name!</h1>
+      <p>Welcome!</p>
     </div>
   );
 }

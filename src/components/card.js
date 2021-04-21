@@ -5,10 +5,10 @@ function Card() {
     <div>
       <div className="card mb-4">
         <div className="card-header">
-          <h3>Card title</h3>
+          <h3>employee name</h3>
         </div>
         <div className="card-body">
-          <p className="card-text">Card content</p>
+          <p className="card-text">employee postions</p>
         </div>
       </div>
     </div>
