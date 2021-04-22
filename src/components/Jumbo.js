@@ -4,7 +4,7 @@ import "../styles/jumbo.css"
 function Jumbotron() {
   return (
     <div className="jumbotron">
-      <h1>The companys name!</h1>
+      <h1>The company's name!</h1>
       <p>Welcome!</p>
     </div>
   );
