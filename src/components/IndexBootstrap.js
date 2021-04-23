@@ -26,8 +26,8 @@ class Call extends React.Component {
     this.setState({ employees });
   };
 
-  filterEmployees = (employee) => {
-    if(employee.name.includes(this.state.search)){
+  filterEmployees = (employees) => {
+    if(employees.name.includes(this.state.search)){
       return true
     }
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment"
 
 function Card({ employees }) {
   return (
@@ -22,7 +23,7 @@ function Card({ employees }) {
               <td>{employees.name}</td>
               <td>{employees.email}</td>
               <td>{employees.phone}</td>
-              <td>{employees.dob}</td>
+              <td>{moment(employees.dob).format('MM-DD-YYYY')}</td>
             </tr>
           ))
         )}
