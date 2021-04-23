@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/navbar.css";
 
-function Navbar() {
+function Navbar( {props, sortEmployees}) {
   return (
     <div className="searchbar">
       <nav className="navbar navbar-light bg-light">
@@ -11,10 +11,17 @@ function Navbar() {
             type="search"
             placeholder="Search by Name"
             aria-label="Search"
+            onChange={props.handleInputChange}
+            name="search"
           />
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
+            <input
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Search by Gender"
+            aria-label="Search"
+            onChange={sortEmployees}
+            name="sort"
+          />
         </form>
       </nav>
     </div>

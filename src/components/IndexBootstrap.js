@@ -7,8 +7,10 @@ import Card from "./Card";
 class Call extends React.Component {
   state = {
     employees: [],
-    sreach: "",
+    search: "",
   };
+
+  newEmployees = [...this.state.employees]
 
   componentDidMount() {
     this.getEmployees();
@@ -22,23 +24,48 @@ class Call extends React.Component {
       phone: item.phone,
       dob: item.dob.date,
       image: item.picture.thumbnail,
+      id: item.login.uuid,
+      gender: item.gender,
     }));
     this.setState({ employees });
   };
 
   filterEmployees = (employees) => {
-    if(employees.name.includes(this.state.search)){
-      return true
+    if (
+      employees.name.toLowerCase().includes(this.state.search.toLowerCase())
+    ) {
+      return true;
     }
-  }
+    return false;
+  };
+
+  handleInputChange = (e) => {
+    e.preventDefault();
+    const value = e.target.value;
+    const name = e.target.name;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  sortEmployees = (newEmployees) => {
+    newEmployees.sort(gender);
+  };
 
   render() {
     console.log(this.state);
     return (
       <>
         <Jumbotron />
-        <Navbar />
-        <Card employees = {this.state.employees} />
+        <Navbar
+          value={this.state.search}
+          handleInputChange={this.handleInputChange}
+          sortEmployees={this.sortEmployees}
+        />
+        <Card
+          employees={this.state.employees}
+          filterEmployees={this.filterEmployees}
+        />
       </>
     );
   }
