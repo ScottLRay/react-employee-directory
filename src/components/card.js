@@ -1,13 +1,14 @@
 import React from "react";
 import moment from "moment"
+import "../styles/Card.css"
 
-function Card({ employees, filterEmployees }) {
+function Card({ employees, filterEmployees, sortEmployees }) {
   return (
-    <table className="table table-striped">
+    <table className="table table-striped table-resposive text-center">
       <thead>
         <tr>
         <th scope="col">Image</th>
-        <th scope="col">Name</th>
+        <th scope="col">Name <span className="downArrow" onClick={sortEmployees}></span></th>
         <th scope="col">Email</th>
         <th scope="col">Phone</th>
         <th scope="col">DOB</th>

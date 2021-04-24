@@ -8,9 +8,10 @@ class Call extends React.Component {
   state = {
     employees: [],
     search: "",
+    sortOrder: "",
   };
 
-  newEmployees = [...this.state.employees]
+  // newEmployees = [...this.state.employees];
 
   componentDidMount() {
     this.getEmployees();
@@ -25,7 +26,6 @@ class Call extends React.Component {
       dob: item.dob.date,
       image: item.picture.thumbnail,
       id: item.login.uuid,
-      gender: item.gender,
     }));
     this.setState({ employees });
   };
@@ -48,8 +48,23 @@ class Call extends React.Component {
     });
   };
 
-  sortEmployees = (newEmployees) => {
-    newEmployees.sort(gender);
+  sortEmployees = () => {
+    let sortedEmployees = this.state.employees.sort((a, b) => {
+      if (b.name > a.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+      if (this.state.sortOrder === "DESC") {
+        sortedEmployees.reverse();
+      this.setState({ sortOrder: "ASC" });
+      } else {
+      this.setState({ sortOrder: "DESC" });
+      }
+      this.setState({ results: sortedEmployees });
   };
 
   render() {
@@ -60,11 +75,12 @@ class Call extends React.Component {
         <Navbar
           value={this.state.search}
           handleInputChange={this.handleInputChange}
-          sortEmployees={this.sortEmployees}
+          
         />
         <Card
           employees={this.state.employees}
           filterEmployees={this.filterEmployees}
+          sortEmployees={this.sortEmployees}
         />
       </>
     );
