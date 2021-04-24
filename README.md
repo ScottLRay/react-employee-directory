@@ -21,3 +21,4 @@ An employee or manager would benefit greatly from being able to view non-sensiti
 https://github.com/ScottLRay/react-employee-directory
 
 ## Deployed link
+https://608387f983aae90007d5d3bc--inspiring-johnson-3d7599.netlify.app/
