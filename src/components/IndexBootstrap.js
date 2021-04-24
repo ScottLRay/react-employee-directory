@@ -2,7 +2,7 @@ import React from "react";
 import API from "../utils/API";
 import Jumbotron from "./Jumbo";
 import Navbar from "./navbar";
-import Card from "./Card";
+import Card from "./Card.js";
 
 class Call extends React.Component {
   state = {
