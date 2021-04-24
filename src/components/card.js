@@ -34,4 +34,5 @@ function Card({ employees, filterEmployees, sortEmployees }) {
     </table>
   );
 }
+
 export default Card;
